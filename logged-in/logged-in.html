@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEShop</title>
+    <link rel="stylesheet" href="logged-in.css">
+    <link rel="shortcut icon" href="/img/icon.ico" />
+</head>
+
+<body>
+    <img src="/img/mainPic.png" class="menu-logo" alt="">
+    <p class="main-text">"A legtöbben tisztában vagyunk azzal, hogy a gyümölcsök és a zöldségek egészségesek, ám ezt az információt jól elraktározzuk agyunk valamelyik fiókjában - a "Tudom, de úgy döntöttem, nem foglalkozom vele" címkéjűbe."</p>
+    <header class="header">
+      <!-- Cart -->
+        <div class="cart-wrap" id="cart-wrap">
+            <div class="cart-img" href="#">
+                <img src="/img/shopping-cart.svg" class="cart-buttom" id="cart-img" alt=""></img>
+            </div>
+            <p id="shopping-cart-counter">0</p>
+            <div class="cart-items-wrap" id="cart-items">
+            </div>
+        </div>
+
+        </div>
+
+
+
+    </header>
+    <div class="wrapper">
+        <div class="divider div-transparent"></div>
+    </div>
+    <div class="main-container">
+        <p class="allergie-text">Fontos, hogy odafigyeljünk allergiáinkra, érzékenységeinkre. Ételeink nyomokban tartalmazhatnak allergéneket, ezért kérem nézzék át az alább látható táblázatot. További tájékoztatásért az elnevezésekre kattintson.</p>
+        <table class="center">
+            <tr class="tableFirstLine">
+                <th>Elnevezés</th>
+                <th>Leírás</th>
+            </tr>
+            <tr class="tableLines">
+                <th><a href="https://www.webbeteg.hu/cikkek/emesztorendszer/12041/glutenintolerancia" tabindex="1">Gluténérzékenység</a></th>
+                <th>A gluténérzékenység egy autoimmun betegség, amit az egyes gabonafélékben (búza, árpa, rozs, zab) található anyag, a glutén vált ki.</th>
+            </tr>
+             <tr class="tableLines">
+                <th><a href="https://www.webbeteg.hu/cikkek/emesztorendszer/870/laktoz-intolerancia" tabindex="1">Laktózérzékenység</a></th>
+                <th>A laktóz intolerancia tulajdonképpen egy emésztési zavar, aminek lényege, hogy a laktózérzékeny emberek nem tudják maradéktalanul megemészteni, azaz lebontani a tejcukrot.</th>
+            </tr>
+            <tr class="tableLines">
+                <th><a href="https://www.webbeteg.hu/cikkek/allergia/13406/fruktoz-problemak" tabindex="1">Fruktózérzékenység</a></th>
+                <th>A fruktóz érzékenység a gyümölcscukor felszívódási zavarát jelenti, ami az európai népesség körében gyakori.</th>
+            </tr>
+            <tr class="tableLines">
+                <th><a href="https://www.webbeteg.hu/cikkek/allergia/18173/hisztamin-intolerancia" tabindex="1">Hisztamin intolerancia</a></th>
+                <th>A hisztamin-intolerancia (más néven hisztaminózis) magas hisztamin-tartalmú élelmiszerek, ételek fogyasztása után jelentkező és/vagy a szervezetben felszabadult nagy mennyiségű hisztamin miatt jelentkező tünetegyüttes.</th>
+            </tr>
+            <tr class="tableLines">
+                <th><a href="https://www.webbeteg.hu/cikkek/allergia/11735/keresztallergia" tabindex="1">Keresztallergia</a></th>
+                <th>A keresztallergia azt jelenti, hogy bizonyos anyagok képesek más anyagot helyettesíteni, utánozni, ami az allergiás tünetek megjelenését eredményezheti.</th>
+            </tr>
+        </table>
+    </div>
+    <div class="add-food-container" id="add-food-container">
+            <h2 class="food-title">Plusz étel:</h2>
+            <div class="filter-box">
+                <form class="input_container">
+                    <label for = "foodName" class="input-label">Étel neve</label>
+                    <input id="foodName" class="o-input" type="text" required/>
+                    <p class="invalid-foodinput" id="empty-foodName"></p>
+                </form>
+                <form class="input_container">
+                    <label for="price" class="input-label">Ár</label>
+                    <input id="price" class="o-input" type="text" required/>
+                    <p class="invalid-foodinput" id="empty-price"></p>
+                </form>
+                <form class="input_container">
+                    <label for="topping" class="input-label">Hozzávalók</label>
+                    <input id="topping" class="o-input" type="text" required/>
+                    <p class="invalid-foodinput" id="empty-topping"></p>
+                </form>
+                <form class="input_container">
+                    <label for="calorie" class="input-label">Kalória érték</label>
+                    <input id="calorie" class="o-input" type="text" required/>
+                    <p class="invalid-foodinput" id="empty-calorie"></p>
+                </form>
+                <button class="new-food" onclick="drawNewFood()">Étel hozzáadása</button>
+            </div>
+        <div class="search_categories">
+            <div class="select">
+                <select name="search_categories" id="search_categories">
+                    <option value="1" selected="selected">Név szerint</option>
+                    <option value="2">Legalacsonyabb ár</option>
+                    <option value="3">Legmagasabb ár</option>
+                </select>
+            </div>
+        </div>
+        <div class="foods-container" id="food-container"></div>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="/logged-in/food.js"></script>
+    <script type="text/javascript" src="../index.js"></script>
+    <script type="text/javascript" src="/logged-in/cart.js"></script>
+    <script type="text/javascript" src="/logged-in/logged-in.js"></script>
+</body>
+
+</html>
